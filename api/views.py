@@ -33,6 +33,7 @@ def getEndpoints(request):
     return Response(routes)
 
 
+
 class MedicineList(APIView):
     def get(self, request):
         query = request.GET.get('query')

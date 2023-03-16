@@ -29,7 +29,6 @@ SECRET_KEY = 'django-insecure-2n3uwgft6ls3jxf9__0v0w)2arz4u(7zk9_$x1uaf^-05+=t4)
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['*']
 
 
 # Application definition
@@ -142,3 +141,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CSRF_TRUSTED_ORIGINS = ['https://web-production-7073.up.railway.app/api/']
+
+CORS_ALLOW_ALL_ORIGINS=True

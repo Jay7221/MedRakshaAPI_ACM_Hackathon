@@ -12,7 +12,7 @@ from rest_framework.views import APIView
 def update(medicine, data):
     medicine.type=data['type'],
     medicine.name=data['name'],
-    medicine.price=data['price'],
+    # medicine.price=float(data['price']),
     medicine.therauptic_category=data['therauptic_category'],
     medicine.disease=data['disease'],
     medicine.description=data['description']
@@ -64,13 +64,12 @@ class MedicineDetail(APIView):
         medicine = self.get_object(id)
         serializer = MedicineSerializer(medicine, many=False)
         return Response(serializer.data)
-    def put(self, request, id):
+    def post(self, request, id):
         medicine = self.get_object(id)
         update(medicine, request.data)
         medicine.save()
-        return Response('success')
-        # return redirect('medicine-detail', id)
+        return Response({"success" : "true"})
     def delete(self, request, id):
         medicine = self.get_object(id)
         medicine.delete()
-        return Response('success')
+        return Response({"success" : "true"})

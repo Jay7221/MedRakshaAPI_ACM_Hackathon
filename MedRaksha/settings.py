@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     
     'api.apps.ApiConfig',
     'medicine.apps.MedicineConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
